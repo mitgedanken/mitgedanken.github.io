@@ -3,7 +3,7 @@ name: Lint Code Base
 
 on:
   push:
-    branches-ignore: [main]
+    branches-ignore: [main, draft]
   pull_request:
     branches: [web]
 
@@ -11,6 +11,7 @@ jobs:
   build:
     name: Linting
     runs-on: ubuntu-latest
+  
   steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,5 +22,6 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
+          FILTER_REGEX_EXCLUDE: .git*/*
           DEFAULT_BRANCH: web
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
