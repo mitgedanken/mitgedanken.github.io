@@ -46,7 +46,8 @@ const Configuration: Config = {
    */
   formatter: "@commitlint/format",
   /*
-   * Any rules defined here will override rules from @commitlint/config-conventional
+   * Any rules defined here will override rules from
+   * @commitlint/config-conventional
    */
   rules: {
     "type-enum": [2, "always", ["foo"]],
