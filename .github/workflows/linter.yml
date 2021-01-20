@@ -1,0 +1,25 @@
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+name: Lint Code Base
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [web]
+
+jobs:
+  build:
+    name: Linting
+    runs-on: ubuntu-latest
+  steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: web
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
