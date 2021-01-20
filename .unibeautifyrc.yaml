@@ -70,7 +70,7 @@ HTML:
   indent_comments: true
   end_with_newline: true
   preserve_newlines: false
-  brace_style: !<tag:yaml.org,2002:js/undefined> ''
+  brace_style: !<tag:yaml.org,2002:js/undefined> ""
   force_indentation: true
   indent_inner_html: true
   indent_scripts: normal
@@ -106,7 +106,7 @@ JavaScript:
   end_with_semicolon: false
   indent_chained_methods: true
   jslint_happy: true
-  jsx_brackets: !<tag:yaml.org,2002:js/undefined> ''
+  jsx_brackets: !<tag:yaml.org,2002:js/undefined> ""
   keep_array_indentation: true
   object_curly_spacing: true
   space_before_conditional: true
@@ -151,5 +151,5 @@ TypeScript:
   space_after_anon_function: false
   arrow_parens: as-needed
   end_with_semicolon: false
-  jsx_brackets: !<tag:yaml.org,2002:js/undefined> ''
+  jsx_brackets: !<tag:yaml.org,2002:js/undefined> ""
   object_curly_spacing: true
