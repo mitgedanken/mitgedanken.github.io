@@ -6,7 +6,8 @@ type Config = {
   /*
    * Resolveable id to conventional-changelog parser preset to import and use
    */
-  parserPreset?: string,
+  parserPreset
+  ?: string,
   /*
    * Resolveable id to package, from node_modules, which formats the output.
    */
@@ -14,7 +15,7 @@ type Config = {
   /*
    * Rules to check against
    */
-  rules?: { [name: string]: Rule },
+  rules?: {[name: string]: Rule},
   /*
    * Functions that return true if commitlint should ignore the given message.
    */
@@ -34,36 +35,37 @@ const Configuration: Config = {
    * Resolve and load @commitlint/config-conventional from node_modules.
    * Referenced packages must be installed
    */
-  extends: ["@commitlint/config-conventional"],
+  extends : [ "@commitlint/config-conventional" ],
   /*
    * Resolve and load conventional-changelog-atom from node_modules.
    * Referenced packages must be installed
    */
-  parserPreset: "conventional-changelog-atom",
+  parserPreset : "conventional-changelog-atom",
   /*
    * Resolve and load @commitlint/format from node_modules.
    * Referenced package must be installed
    */
-  formatter: "@commitlint/format",
+  formatter : "@commitlint/format",
   /*
-   * Any rules defined here will override rules from @commitlint/config-conventional
+   * Any rules defined here will override rules from
+   * @commitlint/config-conventional
    */
-  rules: {
-    "type-enum": [2, "always", ["foo"]],
+  rules : {
+    "type-enum" : [ 2, "always", [ "foo" ] ],
   },
   /*
    * Functions that return true if commitlint should ignore the given message.
    */
-  ignores: [(commit) => commit === ""],
+  ignores : [ (commit) => commit === "" ],
   /*
    * Whether commitlint uses the default ignore rules.
    */
-  defaultIgnores: true,
+  defaultIgnores : true,
   /*
    * Custom URL to show upon failure
    */
-  helpUrl:
-    "https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
+  helpUrl :
+      "https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
 };
 
 module.exports = Configuration;
